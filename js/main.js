@@ -92,7 +92,7 @@
     let imgElem;
     for (let i = 0; i < sceneInfo[0].values.videoImagesCount; i++) {
       imgElem = new Image();
-      imgElem.src = `./../video/introduce/${1 + i}.jpg`;
+      imgElem.src = `./video/introduce/${1 + i}.jpg`;
       sceneInfo[0].objects.videoImages.push(imgElem);
     }
   }
@@ -167,7 +167,6 @@
         // const messageA_translateY_out = calcValues(values.messageA_translateY_out, currentYOffset);
         let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
         objects.context.drawImage(objects.videoImages[sequence], 0, 0);
-
 // 
         if (scrollRatio <= 0.5) {
           //in
@@ -269,7 +268,7 @@
     sceneInfo[0].objects.context.drawImage(sceneInfo[0].objects.videoImages[0], 0, 0);
   });
   window.addEventListener('resize', setLayout);
-  setLayout();
+  // setLayout();
 
   
 })();
