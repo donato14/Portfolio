@@ -1,6 +1,5 @@
 # Portfolio
 안녕하세요. 강규준입니다.<br>
-개발자로서 첫 발을 내딛는 포트폴리오입니다.<br>
 <br>
 
 <a href="https://inf.run/BYWA" target="_blank">1분코딩_애플_웹사이트_인터랙션_클론</a><br>
