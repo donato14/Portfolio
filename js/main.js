@@ -92,7 +92,7 @@
     let imgElem;
     for (let i = 0; i < sceneInfo[0].values.videoImagesCount; i++) {
       imgElem = new Image();
-      imgElem.src = `./../video/introduce/${1 + i}.jpg`;
+      imgElem.src = `./video/introduce/${1 + i}.jpg`;
       sceneInfo[0].objects.videoImages.push(imgElem);
     }
   }
