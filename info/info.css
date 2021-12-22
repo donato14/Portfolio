@@ -1,0 +1,77 @@
+.info-section {
+  padding-top: 20vh;
+}
+
+.self-info img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 3em;
+}
+
+.my-info {
+  padding: 0 2rem;
+  padding-bottom: 3rem;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2.5em;
+}
+
+.my-name {
+  font-size: 40px;
+}
+
+i {
+  margin-left: 4em;
+  font-size: 40px;
+}
+
+.motto {
+  display: block;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+.sub-info {
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.birth-info {
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+}
+
+.list-wrap {
+  display: flex;
+  align-items: flex-start;
+}
+.year {
+  font-weight: 900;
+}
+.month {
+  margin-left: 3em;
+  display: flex;
+  margin-bottom: 1.2em;
+}
+.text {
+  margin-left: 3rem;
+  font-size: 12px;
+}
+
+
+@media screen and (min-width:1024px) {
+  .self-info {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .self-info img {
+    width: 620px;
+    height: 868px;
+  }
+}
