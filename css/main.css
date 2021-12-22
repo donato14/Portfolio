@@ -171,11 +171,13 @@ p.header {
   font-size: 0.8em;
   font-weight: 900;
   color: #ddd;
-  background-color: #0071E3;
+  background-color: #9a8c98;
   border-radius: 35px;
   padding: 12px 12px;
-  margin: 20px 20px;
+  margin: 20px 20px 20px 0px;
+  order: 1;
 }
+
 
 /* scroll-section-2 */
 
@@ -193,10 +195,10 @@ p.header {
   font-size: 3.5rem;
 }
 
-#show-scene-0 #scroll-section-0 .sticky-elem,
-#show-scene-1 #scroll-section-1 .sticky-elem,
-#show-scene-2 #scroll-section-2 .sticky-elem,
-#show-scene-3 #scroll-section-3 .sticky-elem{
+#scroll-section-0 .sticky-elem,
+#scroll-section-1 .sticky-elem,
+#scroll-section-2 .sticky-elem,
+#scroll-section-3 .sticky-elem{
   display: block;
 }
 
@@ -242,8 +244,9 @@ p.header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
+
 
 .mid-message {
   padding: 0 1rem;
