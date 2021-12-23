@@ -80,7 +80,7 @@
     {
       //3
       type: 'normal',
-      heightNum: 5, //브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 6, //브라우저 높이의 5배로 scrollHeight 세팅
       scrollHeight: 0,
       objects: {
         container: document.querySelector('#scroll-section-3')
