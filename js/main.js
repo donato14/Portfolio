@@ -295,13 +295,28 @@
       rafState = true;
     }
   });
-  // window.addEventListener('DOMcontentLoaded',setLayout);
+
   window.addEventListener('load', () => {
     setLayout();
+    document.body.classList.remove('before-load');
     sceneInfo[0].objects.context.drawImage(sceneInfo[0].objects.videoImages[0], 0, 0);
-  });
-  window.addEventListener('resize', setLayout);
-  // setLayout();
 
-  setCanvasImages();
+    let tempYOffset = yOffset;
+    let tempScrollCount = 0;
+    if(yOffset > 0) {
+      let siId = setInterval(() => {
+        
+        window.scrollTo(0, tempYOffset);
+        tempYOffset += 5;
+
+        if(tempScrollCount > 20) {
+          clearInterval(siId);
+        }
+        tempScrollCount++;
+      },20)
+    }
+  });
+
+  setCanvasImages(); //이거 위치에 따라서 깃허브에서 버그가 나는지?
+  //버그가 난다면 drawCanvas 코드쪽으로가서 setCanvasImage(); 주석 풀어주기
 })();
