@@ -1,6 +1,6 @@
 // 전역변수는 피하자
 //default - scrollHeight = 4875
-(function(){
+(() => {
 
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
@@ -58,7 +58,6 @@
     {
       //1
       type: 'normal',
-      // heightNum: 5, //브라우저 높이의 5배로 scrollHeight 세팅 // type normal에서는 필요 없음
       scrollHeight: 0,
       objects: {
         container: document.querySelector('#scroll-section-1')
@@ -67,7 +66,7 @@
     {
       //2
       type: 'sticky',
-      heightNum: 2, //브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 2,
       scrollHeight: 0,
       objects: {
         container: document.querySelector('#scroll-section-2'),
@@ -84,7 +83,7 @@
     {
       //3
       type: 'normal',
-      heightNum: 6, //브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 6,
       scrollHeight: 0,
       objects: {
         container: document.querySelector('#scroll-section-3')
@@ -165,13 +164,7 @@
 
     switch (currentScene) {
       case 0:
-        // const messageA_opacity_in = calcValues(values.messageA_opacity_in, currentYOffset);
-        // const messageA_opacity_out = calcValues(values.messageA_opacity_out, currentYOffset);
-        // const messageA_translateY_in = calcValues(values.messageA_translateY_in, currentYOffset);
-        // const messageA_translateY_out = calcValues(values.messageA_translateY_out, currentYOffset);
-        // let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
-        // objects.context.drawImage(objects.videoImages[sequence], 0, 0);
-// 
+
         if (scrollRatio <= 0.5) {
           //in
           objects.canvas.style.opacity = calcValues(values.canvas_opacity_in, currentYOffset);
@@ -179,7 +172,7 @@
           //out
           objects.canvas.style.opacity = calcValues(values.canvas_opacity_out, currentYOffset);
         }
-// 
+
 
         if (scrollRatio <= 0.22) {
           //in
@@ -244,7 +237,7 @@
     for (let i = 0; i < currentScene; i++){
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
-
+    //페이지 끝으로 고속 이동시 body id가 변하지 않는 오류 해결
     if(delayedYOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       enterNewScene = true;
       currentScene++;
@@ -261,7 +254,7 @@
 
     playAnimation();
   }
-
+  //스크롤 스무스
   function loop() {
     delayedYOffset = delayedYOffset + (yOffset - delayedYOffset) * acc;
     
@@ -296,11 +289,13 @@
     }
   });
 
-  window.addEventListener('load', () => {
+  window.addEventListener('onload', () => {
     setLayout();
-    document.body.classList.remove('before-load');
+    //모든 이미지 로드시 로딩화면 삭제 코드 (현재 버그)
+    // document.body.classList.remove('before-load');
+    //중간에서 새로고침시, 콘텐츠 양에 따라 오차 발생 방지
     sceneInfo[0].objects.context.drawImage(sceneInfo[0].objects.videoImages[0], 0, 0);
-
+    // 새로고침시 자동 스크롤 
     let tempYOffset = yOffset;
     let tempScrollCount = 0;
     if(yOffset > 0) {

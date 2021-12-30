@@ -49,7 +49,7 @@ a {
   position: absolute;
   top: 45px;
   left: 0;
-  z-index: 11; /* 앞으로 나오게 */
+  z-index: 11;
   width: 100%;
   height: 52px;
   padding: 0 1rem;
@@ -103,20 +103,16 @@ a {
   height: 3em;
   font-size: 2.5rem;
   opacity: 0;
-  /* background: rgba(0,0,0,0.3); */
 }
 
 .main-message p{
   font-weight: 900;
   text-align: center;
   line-height: 1.2;
-  /* text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; */
 }
 
 p.header {
-  /* color: rgb(29, 29, 31); */
   color: #fff;
-  /* text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff; */
 }
 
 .sticky-elem {
