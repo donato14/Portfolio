@@ -14,6 +14,7 @@
 </head>
 
 <body>
+	<!-- 모든 이미지가 로드될동안 보여줄 바람개비 로딩화면이나 js파일에서 load, 요소 remove가 정확히 되지 않는 버그로 현재 미지원 -->
 	<!-- <div class="before-load">
 		<div class="loading">
 			<svg class="loading-circle">
@@ -25,6 +26,7 @@
 		<div class="nav">
 			<nav class="global-nav">
 				<div class="global-nav-links">
+					<!-- 최상단 메뉴 -->
 					<a href="#scroll-section-0" class="global-nav-item">Main</a>
 					<a href="#scroll-section-1" class="global-nav-item">About me</a>
 					<a href="./portfolio/portfolio.html" class="global-nav-item">Portfolio</a>
@@ -33,6 +35,7 @@
 			</nav>
 			<nav class="local-nav">
 				<div class="local-nav-links">
+					<!-- 상단 메뉴 -->
 					<a href="#" class="product-name">Kang Kujun</a>
 					<a href="./info/info.html">Info</a>
 					<a href="https://everydayco-ding.tistory.com">Blog</a>
@@ -41,9 +44,10 @@
 			</nav>
 		</div>
 		<section class="scroll-section" id="scroll-section-0">
-			<h1>HELLO-!</h1>
+			<h1>HELLO-!</h1> <!-- 스크롤 양에 따라 등장/퇴장하는 인터랙티브 텍스트 -->
 			<div class="sticky-elem sticky-elem-canvas">
-				<canvas id="video-canvas-0" width="1920" height="1080"></canvas>
+				<!-- 스크롤양에 따라 변화하는 캔버스 -->
+				<canvas id="video-canvas-0" width="1920" height="1080" aria-label="background video"></canvas>
 			</div>
 			<div class="sticky-elem main-message a">
 				<p class="header">안녕하세요<br>환영합니다!</p>
@@ -60,6 +64,7 @@
 		</section>
 		<section class="scroll-section" id="scroll-section-1">
 			<p class="description">
+				<!-- 일반 자기소개/ 상세소개는 상단메뉴 info -->
 				<strong id="strong-bold">개발자를 희망</strong><br>
 				하게된 계기는 저만의 아이디어를 직접 구현할 수 있다는 점에 크게 매료되었습니다.<br>
 				<br>
@@ -77,6 +82,7 @@
 				저는 언제나 배움을 게을리하지 않고, <br>
 				새로운 것을 도전하는데 머뭇거리지 않을 것 입니다.<br>
 				<!-- <a href="./info/info.html" class="button" id="info">상세 인적 사항</a> -->
+				<!-- 버튼이 이후에 나오는 인터렉티브 텍스트의 div 영역에 가려 일정 영역에서 선택되지 않는 버그 존재 -->
 			</p>
 		</section>
 		<section class="scroll-section" id="scroll-section-2">
@@ -88,17 +94,19 @@
 			</div>
 		</section>
 		<section class="scroll-section" id="scroll-section-3">
+			<!-- 사용해보았거나 사용중인 기술 스택들 -->
 			<div class="section">
 				<p class="mid-message">
 					<strong>기술 스택</strong>
 				</p>
-				<div class="logo">
-					<img src="./image/pngwing.com.png" alt="" id="oracle-logo">
-					<img src="./image/javalogo.png" alt="" id="java-logo">
-					<img src="./image/html5.png" alt="" id="html5-logo">
-					<img src="./image/pngegg.png" alt="" id="python-logo">
+				<div class="logo" aria-label="사용가능 / 사용 경험 기술 스택 ">
+					<img src="./image/pngwing.com.png" alt="오라클" id="oracle-logo">
+					<img src="./image/javalogo.png" alt="자바" id="java-logo">
+					<img src="./image/html5.png" alt="HTML5" id="html5-logo">
+					<img src="./image/pngegg.png" alt="파이썬" id="python-logo">
 				</div>
 				<div class="Portfolio-section">
+					<!-- 포트폴리오 파트 기본으로 3개만 등록하며 Read more 버튼 클릭시 포트폴리오 화면으로 이동 -->
 					<p class="Portfolio-title">
 						<strong>포트폴리오</strong>
 					</p>
@@ -117,7 +125,7 @@
 						<p class="project-property">Toy project</p>
 						<p class="project-name">Web frontend</p>
 					</div>
-					<div class="more-button">
+					<div class="more-button" aria-label="portfolio read more">
 						<a href="./portfolio/portfolio.html" class="button" id="move-portfolio">MORE</a>
 					</div>
 				</div>

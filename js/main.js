@@ -1,12 +1,12 @@
-// 전역변수는 피하자
-//default - scrollHeight = 4875
+// 전역변수는 뜻하지 않는 오류를 발생시킬 수 있으므로 즉시 실행되는 함수에 모든 변수와 함수를 담아 오류 발생 확률을 최소화한다.
+//default - scrollHeight = 4875 (기본 화면의 스크롤 높이)
 (() => {
 
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
   let currentScene = 0; //현재 활성화된(눈앞에 보고있는) 씬(scroll-section)
   let enterNewScene = false; // 새로운 scene이 시작된 순간 true
-  let acc = 0.1;
+  let acc = 0.1; //가속도 (부드러운 스크롤을 만드는데 사용된다.)
   let delayedYOffset = 0;
   let rafId;
   let rafState;
@@ -92,6 +92,7 @@
   ];
 
   function setCanvasImages() {
+    //캔버스에 비디오(이미지)를 그리는 과정
     let imgElem;
     for (let i = 0; i < sceneInfo[0].values.videoImagesCount; i++) {
       imgElem = new Image();
@@ -103,6 +104,7 @@
 
   function setLayout() {
     //각 스크롤 섹션의 높이 세팅
+    //스크롤에 따라 body의 id의 show-scene-x의 번호가 변경된다.
     for (let i = 0; i < sceneInfo.length; i++) {
       if (sceneInfo[i].type === 'sticky') {
         sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
@@ -123,7 +125,7 @@
       }
     }
     document.body.setAttribute('id',`show-scene-${currentScene}`);
-
+    //캔버스가 화면 중앙에 위치되도록 해준다
     const heightRatio = window.innerHeight / 1080;
     sceneInfo[0].objects.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
   }

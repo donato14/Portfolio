@@ -126,6 +126,8 @@ p.header {
   top: 0;
   height: 100%;
   transform: scale(50%, 50%);
+  -webkit-transform: scale(0.5);
+  
 }
 
 .sticky-elem-canvas canvas {
