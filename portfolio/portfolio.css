@@ -28,7 +28,7 @@
 }
 .card-image {
 	height: 0;
-	padding-bottom: 60%;
+	padding-bottom: 65%;
 	background-color: lightgray;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -44,10 +44,11 @@
 }
 .card-desc {
   width: 100%;
-	padding: 1em;
-	background: white;
+	margin-top: 10px;
+	margin-left: 10px;
+	/* background: white; */
 	font-size: 0.8em;
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
 	
 }
 
