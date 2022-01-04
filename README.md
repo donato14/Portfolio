@@ -17,6 +17,7 @@
   21.12.30=> 수정완료
 3. js에서 window.addEventListener('load', () => {
 }) 부분에 들어가는 코드들이 정확히 동작하는지 잘 모르겠음. before-load로 이미지 로딩화면을 구현했으나 잘 동작하지 않고 있음.
+4. 메인 Index보다 캔버스가 위에 존재해 Index에 버튼 생성시 클릭이 안되는 이슈가 있음 - (pointer-event:none;을 넣으면 되지 않을까 예상중)
 
 <br>
 <br>
